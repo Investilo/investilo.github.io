@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dezi Trap - Coin Trading Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <button class="back-btn" onclick="location.href='home.html'">← Back to Home</button>
+                <h1>🪙 Coin Trading Simulator</h1>
+            </div>
+            <div class="wallet">
+                <div class="balance-card">
+                    <span class="label">Your Balance:</span>
+                    <span class="balance" id="balance">$10.00</span>
+                </div>
+                <button class="reset-btn" id="resetBtn">🔄 Reset</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="trading-section">
+                <div class="coin-info">
+                    <div class="coin-header">
+                        <img src="attached_assets/image_1762576551037.png" alt="Dezi Trap" class="coin-image">
+                        <div class="coin-details">
+                            <h2>Dezi Trap</h2>
+                            <div class="price-display">
+                                <span class="current-price" id="currentPrice">$0.100</span>
+                                <span class="price-change" id="priceChange">+0.00%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <button class="chart-toggle-btn" id="chartToggle">Area Chart</button>
+                        <div class="chart-container">
+                            <canvas id="priceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trading-panel">
+                    <div class="trade-form">
+                        <h3>Trade Dezi Trap</h3>
+                        
+                        <div class="input-group">
+                            <label for="amount">Amount (coins):</label>
+                            <input type="number" id="amount" min="0" step="0.1" placeholder="0.0">
+                        </div>
+
+                        <div class="trade-info">
+                            <div class="info-row">
+                                <span>Total Cost:</span>
+                                <span id="totalCost">$0.00</span>
+                            </div>
+                            <div class="info-row">
+                                <span>You Own:</span>
+                                <span id="coinsOwned">0</span>
+                            </div>
+                        </div>
+
+                        <div class="trade-buttons">
+                            <button class="btn btn-buy" id="buyBtn">Buy</button>
+                            <button class="btn btn-sell" id="sellBtn">Sell</button>
+                        </div>
+                        
+                        <div class="quick-trade-buttons">
+                            <button class="btn btn-buy-all" id="buyAllBtn">Buy All ($)</button>
+                            <button class="btn btn-sell-all" id="sellAllBtn">Sell All</button>
+                        </div>
+                    </div>
+
+                    <div class="portfolio">
+                        <h3>Your Portfolio</h3>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-label">Coins Owned:</span>
+                                <span class="stat-value" id="portfolioCoins">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Portfolio Value:</span>
+                                <span class="stat-value" id="portfolioValue">$0.00</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Profit/Loss:</span>
+                                <span class="stat-value" id="profitLoss">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-section">
+                <div class="market-activity">
+                    <h3>Market Activity</h3>
+                    <div class="activity-list" id="marketActivity">
+                        <div class="activity-item">Market is waiting for trades...</div>
+                    </div>
+                </div>
+
+                <div class="transaction-history">
+                    <h3>Your Transactions</h3>
+                    <div class="transaction-list" id="transactionHistory">
+                        <div class="transaction-item">No transactions yet</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚠️ This is a simulated trading game. All trades and bots are fake for educational purposes only.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
